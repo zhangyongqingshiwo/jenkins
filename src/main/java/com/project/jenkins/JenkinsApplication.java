@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 @RequestMapping("/test")
-public class JenkinsDemoApplication {
+public class JenkinsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JenkinsDemoApplication.class, args);
+        SpringApplication.run(JenkinsApplication.class, args);
     }
 
     @RequestMapping("/test1")
