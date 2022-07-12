@@ -1,6 +1,8 @@
 #!/bin/sh
+
 jenkinsWorkSpace=$1
 servicePort=$2
+
 function killPidByServicePort(){
     servicePort=$1
     netstat -nlp > /opt/zyq/tempPid.txt
@@ -11,7 +13,9 @@ function killPidByServicePort(){
         kill -9 $pid
     fi
 }
+
 echo "stop JenkinsDemo ......"
 killPidByServicePort $servicePort
+
 echo "start JenkinsDemo ......"
 nohup java -jar $jenkinsWorkSpace/target/jenkins-0.0.1-SNAPSHOT.jar >/dev/null 2>&1 &
