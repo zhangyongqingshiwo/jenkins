@@ -15,7 +15,16 @@ public class JenkinsApplication {
     }
 
     @RequestMapping("/test1")
-    public String test1(){
+    public String test1() {
         return "haha";
+    }
+
+    @RequestMapping("/test2")
+    public Integer test2() {
+        int j = 0;
+        for (int i = 0; i < 10000000; i++) {
+            j++;
+        }
+        return j;
     }
 }
