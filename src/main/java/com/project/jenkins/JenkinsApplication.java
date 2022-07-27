@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class JenkinsApplication {
 
+    boolean flag = true;
+
     public static void main(String[] args) {
         SpringApplication.run(JenkinsApplication.class, args);
     }
@@ -26,5 +28,20 @@ public class JenkinsApplication {
             j++;
         }
         return j;
+    }
+
+    @RequestMapping("/test3")
+    public Integer test3() {
+        int i = 0;
+        while(flag){
+            i++;
+        }
+        return i;
+    }
+
+    @RequestMapping("/test4")
+    public String test4() {
+        flag = false;
+        return "success";
     }
 }
